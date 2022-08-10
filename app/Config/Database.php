@@ -30,11 +30,11 @@ class Database extends \CodeIgniter\Database\Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => 'localhost',
-        'username' => '',
-        'password' => '',
-        'database' => '',
-        'DBDriver' => 'MySQLi',
+        'hostname' => getenv('HOSTNAME'),
+        'username' => getenv('USERNAME'),
+        'password' => getenv('PASSWORD'),
+        'database' => getenv('DBNAME'),
+        'DBDriver' => getenv('DRIVER'),
         'DBPrefix' => '',
         'pConnect' => false,
         'DBDebug'  => (ENVIRONMENT !== 'production'),
@@ -47,7 +47,7 @@ class Database extends \CodeIgniter\Database\Config
         'compress' => false,
         'strictOn' => false,
         'failover' => [],
-        'port'     => 3306,
+        'port'     => getenv('PORT'),
     ];
 
     /**
